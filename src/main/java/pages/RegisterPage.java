@@ -57,6 +57,16 @@ public class RegisterPage extends BasePage {
         confirmPasswordField.sendKeys(password);
     }
 
+
+    public void registerFormUsingMandatoryFields(String first, String last, String email, String password) {
+
+        firstNameField.sendKeys(first);
+        lastNameField.sendKeys(last);
+        emailField.sendKeys(email);
+        passwordField.sendKeys(password);
+        confirmPasswordField.sendKeys(password);
+    }
+
     public void clickRegister() {
         registerButton.click();
     }
