@@ -7,53 +7,49 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends BasePage {
 
     @FindBy(xpath = "//h2[text()='Welcome to our store']")
-    WebElement welcomeMessage;
+    WebElement welcomeText;
 
     @FindBy(xpath = "//a[text()='Register']")
     WebElement registerButton;
 
+    @FindBy(xpath = "//a[text()='Log in']")
+    WebElement loginButton;
+
     @FindBy(xpath = "//a[text()='Log out']")
     WebElement logoutButton;
 
-    @FindBy(xpath = "//a[text()='My account']")
+    @FindBy(xpath = "//a[@class='ico-account']")
     WebElement myAccountLink;
-
-    @FindBy(xpath = "//a[text()='Log in']")
-    WebElement loginButton;
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    public boolean isWelcomeMessageDisplayed() {
-        return welcomeMessage.isDisplayed();
+    public boolean isWelcomeTextVisible() {
+        return welcomeText.isDisplayed();
     }
 
-    public void clickRegisterButton() {
+    public void clickRegister() {
         registerButton.click();
     }
 
-    public void clickLogin() {
-        loginButton.click();
-    }
-
-    public boolean isLogoutDisplayed() {
+    public boolean isLogoutVisible() {
         return logoutButton.isDisplayed();
-    }
-
-
-    public boolean isLoginDisplayed() {
-        return loginButton.isDisplayed();
-    }
-
-    public boolean isMyAccountDisplayed() {
-        return myAccountLink.isDisplayed();
     }
 
     public void clickLogout() {
         logoutButton.click();
     }
 
+    public boolean isLoginVisible() {
+        return loginButton.isDisplayed();
+    }
 
+    public void clickLogin() {
+        loginButton.click();
+    }
 
+    public boolean isMyAccountVisible() {
+        return myAccountLink.isDisplayed();
+    }
 }

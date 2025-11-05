@@ -7,31 +7,31 @@ import org.openqa.selenium.support.FindBy;
 public class RegisterPage extends BasePage {
 
     @FindBy(xpath = "//h1[text()='Register']")
-    WebElement registerPageText;
+    WebElement registerText;
 
     @FindBy(id = "gender-male")
     WebElement maleCheckbox;
 
     @FindBy(id = "FirstName")
-    WebElement firstNameField;
+    WebElement firstNameInput;
 
     @FindBy(id = "LastName")
-    WebElement lastNameField;
+    WebElement lastNameInput;
 
     @FindBy(id = "Email")
-    WebElement emailField;
+    WebElement emailInput;
 
     @FindBy(id = "Company")
-    WebElement companyField;
+    WebElement companyInput;
 
     @FindBy(id = "Password")
-    WebElement passwordField;
+    WebElement passwordInput;
 
     @FindBy(id = "ConfirmPassword")
-    WebElement confirmPasswordField;
+    WebElement confirmPasswordInput;
 
     @FindBy(id = "register-button")
-    WebElement registerButton;
+    WebElement registerSubmit;
 
     @FindBy(xpath = "//div[text()='Your registration completed']")
     WebElement registrationSuccessMessage;
@@ -43,39 +43,37 @@ public class RegisterPage extends BasePage {
         super(driver);
     }
 
-    public boolean isRegisterPageDisplayed() {
-        return registerPageText.isDisplayed();
+    public boolean isRegisterTextVisible() {
+        return registerText.isDisplayed();
     }
 
-    public void fillRegistrationForm(String first, String last, String email, String company, String password) {
+    public void fillFullRegistration(String fname, String lname, String email, String company, String password) {
         maleCheckbox.click();
-        firstNameField.sendKeys(first);
-        lastNameField.sendKeys(last);
-        emailField.sendKeys(email);
-        companyField.sendKeys(company);
-        passwordField.sendKeys(password);
-        confirmPasswordField.sendKeys(password);
+        firstNameInput.sendKeys(fname);
+        lastNameInput.sendKeys(lname);
+        emailInput.sendKeys(email);
+        companyInput.sendKeys(company);
+        passwordInput.sendKeys(password);
+        confirmPasswordInput.sendKeys(password);
     }
 
-
-    public void registerFormUsingMandatoryFields(String first, String last, String email, String password) {
-
-        firstNameField.sendKeys(first);
-        lastNameField.sendKeys(last);
-        emailField.sendKeys(email);
-        passwordField.sendKeys(password);
-        confirmPasswordField.sendKeys(password);
+    public void fillMandatoryFields(String fname, String lname, String email, String password) {
+        firstNameInput.sendKeys(fname);
+        lastNameInput.sendKeys(lname);
+        emailInput.sendKeys(email);
+        passwordInput.sendKeys(password);
+        confirmPasswordInput.sendKeys(password);
     }
 
-    public void clickRegister() {
-        registerButton.click();
+    public void clickRegisterButton() {
+        registerSubmit.click();
     }
 
-    public boolean isRegistrationSuccessful() {
+    public boolean isRegistrationSuccessVisible() {
         return registrationSuccessMessage.isDisplayed();
     }
 
-    public void clickContinue() {
+    public void clickContinueButton() {
         continueButton.click();
     }
 }
