@@ -52,4 +52,8 @@ public class HomePage extends BasePage {
     public boolean isMyAccountVisible() {
         return myAccountLink.isDisplayed();
     }
+
+    public void clickMyAccount(){
+        myAccountLink.click();
+    }
 }

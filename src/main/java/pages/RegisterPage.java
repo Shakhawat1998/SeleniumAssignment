@@ -39,6 +39,9 @@ public class RegisterPage extends BasePage {
     @FindBy(xpath = "//a[text()='Continue']")
     WebElement continueButton;
 
+    @FindBy(id = "accept-consent")
+    WebElement privacyAcceptCheckbox;
+
     public RegisterPage(WebDriver driver) {
         super(driver);
     }
@@ -55,6 +58,7 @@ public class RegisterPage extends BasePage {
         companyInput.sendKeys(company);
         passwordInput.sendKeys(password);
         confirmPasswordInput.sendKeys(password);
+        privacyAcceptCheckbox.click();
     }
 
     public void fillMandatoryFields(String fname, String lname, String email, String password) {
@@ -63,6 +67,7 @@ public class RegisterPage extends BasePage {
         emailInput.sendKeys(email);
         passwordInput.sendKeys(password);
         confirmPasswordInput.sendKeys(password);
+        privacyAcceptCheckbox.click();
     }
 
     public void clickRegisterButton() {

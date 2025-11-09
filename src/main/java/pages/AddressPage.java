@@ -7,8 +7,11 @@ import org.openqa.selenium.support.ui.Select;
 
 public class AddressPage extends BasePage {
 
-    @FindBy(xpath = "//h1[text()='My account - Add new address']")
+    @FindBy(xpath = "//h1[normalize-space()='My account - Addresses']")
     WebElement addNewAddressHeading;
+
+    @FindBy(xpath = "//button[text()='Add new']")
+    WebElement addNewButton;
 
     @FindBy(id = "Address_FirstName")
     WebElement firstNameInput;
@@ -46,6 +49,10 @@ public class AddressPage extends BasePage {
 
     public boolean isAddNewAddressHeadingVisible() {
         return addNewAddressHeading.isDisplayed();
+    }
+
+    public void clickAddNewButton(){
+        addNewButton.click();
     }
 
     public void fillAddressForm(String firstName, String lastName, String email, String country, String state,
