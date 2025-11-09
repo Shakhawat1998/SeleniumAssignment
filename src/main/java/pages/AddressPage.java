@@ -3,9 +3,16 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class AddressPage extends BasePage {
+
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     @FindBy(xpath = "//h1[normalize-space()='My account - Addresses']")
     WebElement addNewAddressHeading;
@@ -43,6 +50,10 @@ public class AddressPage extends BasePage {
     @FindBy(xpath = "//button[text()='Save']")
     WebElement saveButton;
 
+    @FindBy(xpath = "//button[normalize-space()='Edit']")
+    WebElement editButton;
+
+
     public AddressPage(WebDriver driver) {
         super(driver);
     }
@@ -55,16 +66,13 @@ public class AddressPage extends BasePage {
         addNewButton.click();
     }
 
-    public void fillAddressForm(String firstName, String lastName, String email, String country, String state,
+    public void fillAddressForm(String firstName, String lastName, String email, String country,
                                 String city, String address1, String zip, String phone) {
 
         firstNameInput.sendKeys(firstName);
         lastNameInput.sendKeys(lastName);
         emailInput.sendKeys(email);
-
         new Select(countryDropdown).selectByVisibleText(country);
-        new Select(stateDropdown).selectByVisibleText(state);
-
         cityInput.sendKeys(city);
         address1Input.sendKeys(address1);
         zipCodeInput.sendKeys(zip);
@@ -74,4 +82,10 @@ public class AddressPage extends BasePage {
     public void clickSaveButton() {
         saveButton.click();
     }
+
+    public boolean isEditButtonDisplayed(){
+        return editButton.isDisplayed();
+    }
+
+
 }
