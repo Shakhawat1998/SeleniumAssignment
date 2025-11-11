@@ -2,8 +2,6 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chromium.ChromiumDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import pages.*;
@@ -17,6 +15,7 @@ public class BaseTest {
     protected static LoginPage loginPage;
     protected static MyAccountPage myAccountPage;
     protected static AddressPage addressPage;
+    protected static ChangePasswordPage changePasswordPage;
 
     // Shared data across tests
     protected static String savedEmail;
@@ -27,13 +26,13 @@ public class BaseTest {
     public void setUpSuite() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-//        driver.get("https://demo.nopcommerce.com/");
         driver.get("https://test470.nop-station.com/");
         homePage = new HomePage(driver);
         registerPage = new RegisterPage(driver);
         loginPage = new LoginPage(driver);
         myAccountPage = new MyAccountPage(driver);
         addressPage = new AddressPage(driver);
+        changePasswordPage = new ChangePasswordPage(driver);
 
     }
 

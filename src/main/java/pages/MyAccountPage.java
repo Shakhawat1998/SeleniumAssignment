@@ -12,6 +12,9 @@ public class MyAccountPage extends BasePage {
     @FindBy(xpath = "(//a[normalize-space()='Addresses'])[1]")
     WebElement addressLink;
 
+    @FindBy(xpath = "//a[normalize-space()='Change password']")
+    WebElement changePasswordLink;
+
     public MyAccountPage(WebDriver driver) {
         super(driver);
     }
@@ -23,4 +26,9 @@ public class MyAccountPage extends BasePage {
     public void clickAddressLink() {
         addressLink.click();
     }
+
+    public void clickChangePasswordLink(){
+        changePasswordLink.click();
+    }
+
 }

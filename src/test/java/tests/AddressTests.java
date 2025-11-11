@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import pages.AddressPage;
 import pages.MyAccountPage;
 
+import java.time.Duration;
 import java.util.Random;
 
 public class AddressTests extends BaseTest{
@@ -30,5 +31,14 @@ public class AddressTests extends BaseTest{
         addressPage.clickSaveButton();
         Assert.assertTrue(addressPage.isEditButtonDisplayed(),"edit button is not visible after address update");
 
+    }
+
+    @Test(priority = 8, description = "Verify that new password is updated")
+    public void verifyNewPasswordIsUpdated(){
+        myAccountPage.clickChangePasswordLink();
+        changePasswordPage.changePasswordPageformFill("123456","123456789","123456789");
+        changePasswordPage.clickChangePassword();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        Assert.assertTrue(changePasswordPage.isNewPasswordUpdated(),"Password didn't change");
     }
 }
