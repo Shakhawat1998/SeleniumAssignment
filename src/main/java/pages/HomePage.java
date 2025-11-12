@@ -21,6 +21,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[@class='ico-account']")
     WebElement myAccountLink;
 
+    @FindBy(xpath = "(//img[@alt='Store 2'])[1]")
+    WebElement homepageLink;
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -55,5 +58,9 @@ public class HomePage extends BasePage {
 
     public void clickMyAccount(){
         myAccountLink.click();
+    }
+
+    public void  goBackToHomePage(){
+        homepageLink.click();
     }
 }

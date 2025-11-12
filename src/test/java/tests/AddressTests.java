@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AddressPage;
@@ -34,7 +35,7 @@ public class AddressTests extends BaseTest{
     }
 
     @Test(priority = 8, description = "Verify that new password is updated")
-    public void verifyNewPasswordIsUpdated(){
+    public void verifyNewPasswordIsUpdated() throws InterruptedException {
         myAccountPage.clickChangePasswordLink();
         changePasswordPage.changePasswordPageformFill("123456","123456789","123456789");
         changePasswordPage.clickChangePassword();

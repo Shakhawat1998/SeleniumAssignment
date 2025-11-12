@@ -16,6 +16,8 @@ public class BaseTest {
     protected static MyAccountPage myAccountPage;
     protected static AddressPage addressPage;
     protected static ChangePasswordPage changePasswordPage;
+    protected static ProductPage productPage;
+    protected static WishlistPage wishlistPage;
 
     // Shared data across tests
     protected static String savedEmail;
@@ -33,6 +35,8 @@ public class BaseTest {
         myAccountPage = new MyAccountPage(driver);
         addressPage = new AddressPage(driver);
         changePasswordPage = new ChangePasswordPage(driver);
+        productPage = new ProductPage(driver);
+        wishlistPage = new WishlistPage(driver);
 
     }
 
