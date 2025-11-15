@@ -20,6 +20,9 @@ public class ProductPage extends BasePage{
     @FindBy(id ="add-to-wishlist-button-1")
     WebElement addToWishlistButton;
 
+    @FindBy(xpath = "//p[@class='content']")
+    WebElement productAddedToWishlistMessage;
+
 
 
     public ProductPage(WebDriver driver) {
@@ -40,5 +43,9 @@ public class ProductPage extends BasePage{
 
     public void clickAddToWishlistButton(){
         addToWishlistButton.click();
+    }
+
+    public boolean isProductAddedToWishlistMessageDisplayed(){
+        return productAddedToWishlistMessage.isDisplayed();
     }
 }

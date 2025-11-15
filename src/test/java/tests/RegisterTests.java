@@ -2,6 +2,9 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utills.WaitUtils;
+
+import java.time.Duration;
 import java.util.Random;
 
 public class RegisterTests extends BaseTest {
@@ -20,11 +23,13 @@ public class RegisterTests extends BaseTest {
         String email = "user" + new Random().nextInt(10000) + "@test.com";
         registerPage.fillFullRegistration("Shakhawat", "Hossain", email, "BS23", "123456");
         registerPage.clickRegisterButton();
-
-        //Assert.assertTrue(registerPage.isRegistrationSuccessVisible(), "Registration success message not visible!");
+        WaitUtils.setImplicitWait(driver, 10);
+        Assert.assertTrue(registerPage.isRegistrationSuccessVisible(), "Registration success message not visible!");
         registerPage.clickContinueButton();
+        WaitUtils.setImplicitWait(driver, 10);
         Assert.assertTrue(homePage.isLogoutVisible(), "Logout button not visible after registration!");
         homePage.clickLogout();
+        WaitUtils.setImplicitWait(driver, 10);
         Assert.assertTrue(homePage.isLoginVisible(), "Login button not visible after logout!");
     }
 
@@ -38,7 +43,7 @@ public class RegisterTests extends BaseTest {
 
         registerPage.fillMandatoryFields("Jane", "Doe", savedEmail, savedPassword);
         registerPage.clickRegisterButton();
-
+        WaitUtils.setImplicitWait(driver, 10);
         Assert.assertTrue(registerPage.isRegistrationSuccessVisible(), "Mandatory registration failed!");
         registerPage.clickContinueButton();
         Assert.assertTrue(homePage.isLogoutVisible(), "Logout button not visible after mandatory registration!");
