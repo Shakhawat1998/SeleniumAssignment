@@ -23,6 +23,9 @@ public class ProductPage extends BasePage{
     @FindBy(xpath = "//p[@class='content']")
     WebElement productAddedToWishlistMessage;
 
+    @FindBy(xpath = "//span[@title='Close']")
+    WebElement closeMessageButton;
+
 
 
     public ProductPage(WebDriver driver) {
@@ -47,5 +50,8 @@ public class ProductPage extends BasePage{
 
     public boolean isProductAddedToWishlistMessageDisplayed(){
         return productAddedToWishlistMessage.isDisplayed();
+    }
+    public void closeMessage(){
+        closeMessageButton.click();
     }
 }

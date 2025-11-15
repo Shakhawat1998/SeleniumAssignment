@@ -37,7 +37,7 @@ public class AddressTests extends BaseTest{
     @Test(priority = 8, description = "Verify that new password is updated")
     public void verifyNewPasswordIsUpdated() throws InterruptedException {
         myAccountPage.clickChangePasswordLink();
-        changePasswordPage.changePasswordPageformFill("123456","123456789","123456789");
+        changePasswordPage.changePasswordPageformFill("SKAT123@","SKAT123@123","SKAT123@123");
         changePasswordPage.clickChangePassword();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Assert.assertTrue(changePasswordPage.isNewPasswordUpdated(),"Password didn't change");

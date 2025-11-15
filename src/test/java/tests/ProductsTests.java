@@ -22,6 +22,16 @@ public class ProductsTests extends BaseTest{
         productPage.clickAddToWishlistButton();
         WaitUtils.setImplicitWait(driver, 10);
         Assert.assertTrue(productPage.isProductAddedToWishlistMessageDisplayed(),"product is not added to wishlist");
+        productPage.closeMessage();
+        Thread.sleep(10000);
+    }
+
+    @Test(priority = 10, description = "Verify that wishlist page is not empty")
+    public void verifyWishlistPageIsNotEmpty() throws InterruptedException {
+        ScrollUtils scroll = new ScrollUtils(driver);
+        scroll.scrollByPixels(0);
+        wishlistPage.clickWishlistLink();
+        Assert.assertTrue(wishlistPage.isUpdateWishlistButtonDisplayed(),"Wishlist page is empty");
 
     }
 }

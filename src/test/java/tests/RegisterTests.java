@@ -21,7 +21,7 @@ public class RegisterTests extends BaseTest {
         Assert.assertTrue(registerPage.isRegisterTextVisible(), "Register page is not visible!");
 
         String email = "user" + new Random().nextInt(10000) + "@test.com";
-        registerPage.fillFullRegistration("Shakhawat", "Hossain", email, "BS23", "123456");
+        registerPage.fillFullRegistration("Shakhawat", "Hossain", email, "BS23", "SKAT123@");
         registerPage.clickRegisterButton();
         WaitUtils.setImplicitWait(driver, 10);
         Assert.assertTrue(registerPage.isRegistrationSuccessVisible(), "Registration success message not visible!");
@@ -39,7 +39,7 @@ public class RegisterTests extends BaseTest {
         Assert.assertTrue(registerPage.isRegisterTextVisible(), "Register page not visible!");
 
         savedEmail = "User" + new Random().nextInt(10000) + "@test.com";
-        savedPassword = "123456";
+        savedPassword = "SKAT123@";
 
         registerPage.fillMandatoryFields("Jane", "Doe", savedEmail, savedPassword);
         registerPage.clickRegisterButton();
