@@ -12,6 +12,17 @@ public class WishlistPage extends BasePage{
     @FindBy(id = "updatecart")
     WebElement updateWishlistButton;
 
+
+    @FindBy(xpath = "(//a[normalize-space()='Digital downloads'])[1]")
+    WebElement digitalDownloadsCategoryLink;
+
+
+    @FindBy(xpath = "//img[@title='Show details for Night Visions']")
+    WebElement digitalProductLink;
+
+    @FindBy(xpath = "//a[text()='Download sample']")
+    WebElement downloadSampleButton;
+
     public WishlistPage(WebDriver driver) {
         super(driver);
     }
@@ -22,6 +33,18 @@ public class WishlistPage extends BasePage{
 
     public boolean isUpdateWishlistButtonDisplayed(){
         return updateWishlistButton.isDisplayed();
+    }
+
+    public void clickDigitalDownloadLink(){
+        digitalDownloadsCategoryLink.click();
+    }
+
+    public void clickDigitalProductLink(){
+        digitalProductLink.click();
+    }
+
+    public void clickDownloadSampleButton(){
+        downloadSampleButton.click();
     }
 
 

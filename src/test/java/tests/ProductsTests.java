@@ -7,6 +7,7 @@ import pages.ProductPage;
 import utills.ScrollUtils;
 import utills.WaitUtils;
 
+import java.io.File;
 import java.time.Duration;
 
 public class ProductsTests extends BaseTest{
@@ -32,6 +33,21 @@ public class ProductsTests extends BaseTest{
         scroll.scrollByPixels(0);
         wishlistPage.clickWishlistLink();
         Assert.assertTrue(wishlistPage.isUpdateWishlistButtonDisplayed(),"Wishlist page is empty");
+    }
+
+    @Test(priority = 11, description = "Verify that digital product is downloaded successfully")
+    public void verifyDigitalProductDownloaded() throws InterruptedException {
+        wishlistPage.clickDigitalDownloadLink();
+        ScrollUtils scroll = new ScrollUtils(driver);
+        scroll.scrollByPixels(300);
+        wishlistPage.clickDigitalProductLink();
+        wishlistPage.clickDownloadSampleButton();
+        Thread.sleep(5000);
+        String downloadPath = "C:\\Users\\BS01347\\Downloads";
+        String fileName = "Night_Vision_1.txt";
+        File file = new File(downloadPath + "\\" + fileName);
+        Assert.assertTrue(file.exists(), "Downloaded file does NOT exist in the download folder!");
 
     }
+
 }
