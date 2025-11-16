@@ -24,7 +24,7 @@ public class ProductsTests extends BaseTest{
         WaitUtils.setImplicitWait(driver, 10);
         Assert.assertTrue(productPage.isProductAddedToWishlistMessageDisplayed(),"product is not added to wishlist");
         productPage.closeMessage();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
     }
 
     @Test(priority = 10, description = "Verify that wishlist page is not empty")
@@ -47,6 +47,24 @@ public class ProductsTests extends BaseTest{
         String fileName = "Night_Vision_1.txt";
         File file = new File(downloadPath + "\\" + fileName);
         Assert.assertTrue(file.exists(), "Downloaded file does NOT exist in the download folder!");
+
+    }
+
+    @Test(priority = 12, description = "Verify that two products are added to compare list")
+    public void verifyTwoProductsAreAddedToCompareList() throws InterruptedException {
+        comparePage.clickJewelryCategoryLink();
+        ScrollUtils scroll = new ScrollUtils(driver);
+        scroll.scrollByPixels(500);
+        comparePage.addProduct1ToWishlist();
+        Thread.sleep(5000);
+        comparePage.addProduct2ToWishlist();
+        Thread.sleep(5000);
+        scroll.scrollByPixels(500);
+        comparePage.clickCompareProductListLink();
+        scroll.scrollByPixels(500);
+        Thread.sleep(5000);
+        int productCount = comparePage.getThirdRowCellCount() - 1;
+        Assert.assertTrue(productCount == 2 ,"Product count in compare list is not equal to 2");
 
     }
 

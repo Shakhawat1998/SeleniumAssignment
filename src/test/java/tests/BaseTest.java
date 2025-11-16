@@ -18,10 +18,12 @@ public class BaseTest {
     protected static ChangePasswordPage changePasswordPage;
     protected static ProductPage productPage;
     protected static WishlistPage wishlistPage;
+    protected static ComparePage comparePage;
 
     // Shared data across tests
     protected static String savedEmail;
     protected static String savedPassword;
+
 
 
     @BeforeSuite
@@ -37,6 +39,7 @@ public class BaseTest {
         changePasswordPage = new ChangePasswordPage(driver);
         productPage = new ProductPage(driver);
         wishlistPage = new WishlistPage(driver);
+        comparePage = new ComparePage(driver);
 
     }
 
