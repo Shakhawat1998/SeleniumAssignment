@@ -19,6 +19,7 @@ public class BaseTest {
     protected static ProductPage productPage;
     protected static WishlistPage wishlistPage;
     protected static ComparePage comparePage;
+    protected static CheckoutPage checkoutPage;
 
     // Shared data across tests
     protected static String savedEmail;
@@ -40,6 +41,7 @@ public class BaseTest {
         productPage = new ProductPage(driver);
         wishlistPage = new WishlistPage(driver);
         comparePage = new ComparePage(driver);
+        checkoutPage = new CheckoutPage(driver);
 
     }
 
