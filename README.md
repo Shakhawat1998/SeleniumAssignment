@@ -37,45 +37,43 @@ The suite is designed using **Selenium WebDriver**, **TestNG**, and the **Page O
 
 
 
-## 📂 Project Structure
 
-nopcommerce-automation/
-│
-├── src/
-│   ├── main/
-│   │   └── java/
-│   │       └── pages/
-│   │           ├── BasePage.java
-│   │           ├── HomePage.java
-│   │           ├── RegisterPage.java
-│   │           ├── LoginPage.java
-│   │           ├── MyAccountPage.java
-│   │           ├── AddressPage.java
-│   │           ├── ChangePasswordPage.java
-│   │           ├── ProductPage.java
-│   │           ├── WishlistPage.java
-│   │           ├── ComparePage.java
-│   │           └── CheckoutPage.java
+
+## 📁 Project Structure
+
+📦 **nopcommerce-automation**  
+├── 📂 src  
+│   ├── 📂 main/java/pages  
+│   │   ├── BasePage.java  
+│   │   ├── HomePage.java  
+│   │   ├── RegisterPage.java  
+│   │   ├── LoginPage.java  
+│   │   ├── MyAccountPage.java  
+│   │   ├── AddressPage.java  
+│   │   ├── ChangePasswordPage.java  
+│   │   ├── ProductPage.java  
+│   │   ├── WishlistPage.java  
+│   │   ├── ComparePage.java  
+│   │   └── CheckoutPage.java  
 │   │
-│   ├── test/
-│   │   └── java/
-│   │       ├── utils/
-│   │       │   ├── ScrollUtils.java
-│   │       │   └── WaitUtils.java
-│   │       │
-│   │       └── tests/
-│   │           ├── BaseTest.java
-│   │           ├── RegisterTests.java
-│   │           ├── LoginTests.java
-│   │           ├── AddressTests.java
-│   │           ├── ProductTests.java
-│   │           └── CheckoutTests.java
+│   ├── 📂 test/java/utils  
+│   │   ├── ScrollUtils.java  
+│   │   └── WaitUtils.java  
+│   │
+│   ├── 📂 test/java/tests  
+│   │   ├── BaseTest.java  
+│   │   ├── RegisterTests.java  
+│   │   ├── LoginTests.java  
+│   │   ├── AddressTests.java  
+│   │   ├── ProductTests.java  
+│   │   └── CheckoutTests.java  
 │
-├── pom.xml
-├── testng.xml
-├── .gitignore
-├── README.md
-├── /reports/
-└── /screenshots/
+├── 📄 pom.xml  
+├── 📄 testng.xml  
+├── 📄 .gitignore  
+├── 📄 README.md  
+├── 📂 reports  
+└── 📂 screenshots  
+
 
 
