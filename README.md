@@ -56,9 +56,7 @@ nopcommerce-automation/
 │   │           ├── WishlistPage.java
 │   │           ├── ComparePage.java
 │   │           └── CheckoutPage.java
-│
-│
-├── src/
+│   │
 │   ├── test/
 │   │   └── java/
 │   │       ├── utils/
@@ -79,4 +77,5 @@ nopcommerce-automation/
 ├── README.md
 ├── /reports/
 └── /screenshots/
+
 
