@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class CheckoutPage extends BasePage {
 
     @FindBy(xpath = "(//a[normalize-space()='Electronics'])[1]")
@@ -29,6 +31,12 @@ public class CheckoutPage extends BasePage {
 
     @FindBy(xpath = "(//span[@title='Close'])[1]")
     WebElement messageCloseButton;
+
+    @FindBy(xpath = "(//span[@class='cart-label'])[1]")
+    WebElement shoppingCartButton;
+
+    @FindBy(xpath = "//table[@class=\"cart\"]//tbody//tr")
+    private  List<WebElement>ShoppingCartProductList;
 
     public CheckoutPage(WebDriver driver) {
         super(driver);
@@ -65,5 +73,13 @@ public class CheckoutPage extends BasePage {
 
     public void clickMessageCloseButton(){
         messageCloseButton.click();
+    }
+
+    public void clickShoppingCartButton(){
+        shoppingCartButton.click();
+    }
+
+    public int getProductCount(){
+        return ShoppingCartProductList.size();
     }
 }

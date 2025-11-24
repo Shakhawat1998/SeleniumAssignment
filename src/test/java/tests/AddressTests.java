@@ -11,19 +11,19 @@ import java.util.Random;
 
 public class AddressTests extends BaseTest{
 
-    @Test(priority = 5, description = "Verify user is redirected to my account page")
+    @Test(priority = 6, description = "Verify user is redirected to my account page")
     public void verifyUserIsRedirectedToMyAccountPage(){
         homePage.clickMyAccount();
         Assert.assertTrue(myAccountPage.isMyAccountHeadingVisible(),"My account heading is not visible");
     }
 
-    @Test(priority = 6, description = "Verify user is redirected to address page")
+    @Test(priority = 7, description = "Verify user is redirected to address page")
     public void verifyUserIsRedirectedToAddressPage() throws InterruptedException {
         myAccountPage.clickAddressLink();
         Assert.assertTrue(addressPage.isAddNewAddressHeadingVisible(), "My new address heading is visible");
     }
 
-    @Test(priority = 7, description = "Verify that new address is added by completing address form")
+    @Test(priority = 8, description = "Verify that new address is added by completing address form")
     public void verifyNewAddressIsAddedByCompletingAddressForm(){
 
         addressPage.clickAddNewButton();
@@ -34,7 +34,7 @@ public class AddressTests extends BaseTest{
 
     }
 
-    @Test(priority = 8, description = "Verify that new password is updated")
+    @Test(priority = 9, description = "Verify that new password is updated")
     public void verifyNewPasswordIsUpdated() throws InterruptedException {
         myAccountPage.clickChangePasswordLink();
         changePasswordPage.changePasswordPageformFill("SKAT123@","SKAT123@123","SKAT123@123");

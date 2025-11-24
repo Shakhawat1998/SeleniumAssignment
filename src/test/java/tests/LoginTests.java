@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class LoginTests extends BaseTest {
 
-    @Test(description = "Login using credentials from mandatory registration", priority = 4)
+    @Test(priority = 5,description = "Login using credentials from mandatory registration")
     public void loginWithMandatoryCredentials() {
         homePage.clickLogin();
         loginPage.login(savedEmail, savedPassword);

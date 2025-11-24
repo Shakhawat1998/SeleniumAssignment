@@ -2,12 +2,11 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.BasePage;
-import utills.ScrollUtils;
-import utills.WaitUtils;
+import utils.ScrollUtils;
+import utils.WaitUtils;
 
 public class CheckoutTests extends BaseTest {
-    @Test(priority = 13, description = "Verify that one product from 3 different categories successfully added to cart")
+    @Test(priority = 14, description = "Verify that one product from 3 different categories successfully added to cart")
     public void verifyThatOneProductFrom3DifferentCategoriesSuccessfullyAddedToCart() throws InterruptedException {
         ScrollUtils scroll = new ScrollUtils(driver);
         scroll.scrollByPixels(0);
@@ -33,9 +32,21 @@ public class CheckoutTests extends BaseTest {
         WaitUtils.setImplicitWait(driver,10);
         Assert.assertTrue(checkoutPage.isProductAddedToCartMessageVisible(),"Digital Download Product not added to cart");
         checkoutPage.clickMessageCloseButton();
-
-
     }
+
+    @Test(priority = 15,description = "Verify that all 3 products are visible in shopping cart")
+    public void verifyThatAll3ProductsAreVisibleInShoppingCart() throws InterruptedException {
+        Thread.sleep(5000);
+        ScrollUtils scroll = new ScrollUtils(driver);
+        scroll.scrollByPixels(0);
+        checkoutPage.clickShoppingCartButton();
+        scroll.scrollByPixels(300);
+        WaitUtils.setImplicitWait(driver,10);
+        int productCountInShoppingCart = checkoutPage.getProductCount();
+        Assert.assertTrue(productCountInShoppingCart == 3, "number of products added in shopping cart is not three");
+    }
+
+
 
 
 
