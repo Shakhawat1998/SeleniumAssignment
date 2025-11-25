@@ -44,6 +44,20 @@ public class CheckoutTests extends BaseTest {
         WaitUtils.setImplicitWait(driver,10);
         int productCountInShoppingCart = checkoutPage.getProductCount();
         Assert.assertTrue(productCountInShoppingCart == 3, "number of products added in shopping cart is not three");
+
+    }
+
+
+    @Test(priority = 16,description = "Verify that gift wrapping dropdown option is selected as yes")
+    public void verifyThatGiftWrappingOptionIsSelectedAsYes() throws InterruptedException {
+        ScrollUtils scroll = new ScrollUtils(driver);
+        scroll.scrollByPixels(400);
+        Thread.sleep(5000);
+        checkoutPage.selectYesInGiftWrappingDropdown();
+        Thread.sleep(5000);
+        String selectedGiftWrappingDropdownText = checkoutPage.getSelectedGiftWrappingDropdownText();
+        Assert.assertEquals(selectedGiftWrappingDropdownText,"Yes [+$10.00]");
+
     }
 
 

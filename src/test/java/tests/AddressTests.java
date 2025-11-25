@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AddressPage;
 import pages.MyAccountPage;
+import utils.WaitUtils;
 
 import java.time.Duration;
 import java.util.Random;
@@ -39,7 +40,7 @@ public class AddressTests extends BaseTest{
         myAccountPage.clickChangePasswordLink();
         changePasswordPage.changePasswordPageformFill("SKAT123@","SKAT123@123","SKAT123@123");
         changePasswordPage.clickChangePassword();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        WaitUtils.setImplicitWait(driver,10);
         Assert.assertTrue(changePasswordPage.isNewPasswordUpdated(),"Password didn't change");
     }
 }

@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -37,6 +38,9 @@ public class CheckoutPage extends BasePage {
 
     @FindBy(xpath = "//table[@class=\"cart\"]//tbody//tr")
     private  List<WebElement>ShoppingCartProductList;
+
+    @FindBy(id="checkout_attribute_1")
+    WebElement giftWrappingDropdown;
 
     public CheckoutPage(WebDriver driver) {
         super(driver);
@@ -81,5 +85,13 @@ public class CheckoutPage extends BasePage {
 
     public int getProductCount(){
         return ShoppingCartProductList.size();
+    }
+
+    public void selectYesInGiftWrappingDropdown(){
+        new Select(giftWrappingDropdown).selectByValue("2");
+    }
+
+    public String getSelectedGiftWrappingDropdownText(){
+        return new Select(giftWrappingDropdown).getFirstSelectedOption().getText();
     }
 }

@@ -22,6 +22,7 @@ public class ProductsTests extends BaseTest{
         Assert.assertTrue(productPage.isProductAddedToWishlistMessageDisplayed(),"product is not added to wishlist");
         productPage.closeMessage();
         Thread.sleep(5000);
+
     }
 
     @Test(priority = 11, description = "Verify that wishlist page is not empty")
@@ -39,7 +40,8 @@ public class ProductsTests extends BaseTest{
         scroll.scrollByPixels(300);
         wishlistPage.clickDigitalProductLink();
         wishlistPage.clickDownloadSampleButton();
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
+        WaitUtils.setImplicitWait(driver,10);
         String downloadPath = "C:\\Users\\BS01347\\Downloads";
         String fileName = "Night_Vision_1.txt";
         File file = new File(downloadPath + "\\" + fileName);
@@ -56,6 +58,7 @@ public class ProductsTests extends BaseTest{
         Thread.sleep(5000);
         comparePage.addProduct2ToWishlist();
         Thread.sleep(5000);
+        WaitUtils.setImplicitWait(driver,10);
         scroll.scrollByPixels(500);
         comparePage.clickCompareProductListLink();
         scroll.scrollByPixels(500);
@@ -64,5 +67,8 @@ public class ProductsTests extends BaseTest{
         Assert.assertTrue(productCount == 2 ,"Product count in compare list is not equal to 2");
 
     }
+
+
+
 
 }
