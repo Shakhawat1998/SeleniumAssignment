@@ -3,7 +3,7 @@
 ## 📌 Project Overview
 
 This project is a complete **end-to-end automation suite** for the demo e-commerce website  
-👉 [ https://demo.nopcommerce.com/](https://test470.nop-station.com/)
+👉 [https://test470.nop-station.com/](https://test470.nop-station.com/)
 
 The automation covers major user workflows including:
 
