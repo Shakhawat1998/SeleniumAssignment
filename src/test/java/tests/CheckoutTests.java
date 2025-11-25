@@ -54,7 +54,7 @@ public class CheckoutTests extends BaseTest {
         scroll.scrollByPixels(400);
         Thread.sleep(5000);
         checkoutPage.selectYesInGiftWrappingDropdown();
-        Thread.sleep(5000);
+        WaitUtils.setImplicitWait(driver,10);
         String selectedGiftWrappingDropdownText = checkoutPage.getSelectedGiftWrappingDropdownText();
         Assert.assertEquals(selectedGiftWrappingDropdownText,"Yes [+$10.00]");
 
