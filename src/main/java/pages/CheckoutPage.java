@@ -42,6 +42,9 @@ public class CheckoutPage extends BasePage {
     @FindBy(id="checkout_attribute_1")
     WebElement giftWrappingDropdown;
 
+    @FindBy(xpath = "(//div[@class='selected-checkout-attributes'])[1]")
+    WebElement selectedCheckoutAttributes;
+
     public CheckoutPage(WebDriver driver) {
         super(driver);
     }
@@ -94,4 +97,14 @@ public class CheckoutPage extends BasePage {
     public String getSelectedGiftWrappingDropdownText(){
         return new Select(giftWrappingDropdown).getFirstSelectedOption().getText();
     }
+
+    public Double getGiftWrappingAmount(){
+        String fullText = selectedCheckoutAttributes.getText();
+        String GiftWrappingText = fullText.split("\n")[0];
+        String amount = GiftWrappingText.replaceAll(".*\\[\\+\\$(.*?)\\].*", "$1");
+        Double giftWrappingAmount = Double.parseDouble(amount);
+        return giftWrappingAmount;
+
+    }
+
 }

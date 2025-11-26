@@ -61,6 +61,14 @@ public class CheckoutTests extends BaseTest {
     }
 
 
+    @Test(priority = 17, description = "Verify that gift wrapping amount is added properly when selected yes")
+    public void verifyThatGiftWrappingAmountIsAddedProperlyWhenSelectedYes() throws InterruptedException {
+        Thread.sleep(2000);
+        Double giftWrappingAmount = checkoutPage.getGiftWrappingAmount();
+        Assert.assertTrue(giftWrappingAmount > 0);
+    }
+
+
 
 
 
