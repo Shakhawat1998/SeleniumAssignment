@@ -64,9 +64,21 @@ public class CheckoutTests extends BaseTest {
     @Test(priority = 17, description = "Verify that gift wrapping amount is added properly when selected yes")
     public void verifyThatGiftWrappingAmountIsAddedProperlyWhenSelectedYes() throws InterruptedException {
         Thread.sleep(2000);
-        Double giftWrappingAmount = checkoutPage.getGiftWrappingAmount();
+        double giftWrappingAmount = checkoutPage.getGiftWrappingAmount();
         Assert.assertTrue(giftWrappingAmount > 0);
     }
+
+    @Test(priority = 18, description = "Verify that total price is correct")
+    public void verifyThatTotalPriceIsCorrect() throws InterruptedException {
+        Thread.sleep(2000);
+        ScrollUtils scroll = new ScrollUtils(driver);
+        scroll.scrollByPixels(-200);
+        Thread.sleep(2000);
+        Double Total;
+        checkoutPage.getTotal();
+    }
+
+
 
 
 

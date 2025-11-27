@@ -36,7 +36,7 @@ public class CheckoutPage extends BasePage {
     @FindBy(xpath = "(//span[@class='cart-label'])[1]")
     WebElement shoppingCartButton;
 
-    @FindBy(xpath = "//table[@class=\"cart\"]//tbody//tr")
+    @FindBy(xpath = "//table[@class='cart']//tbody//tr")
     private  List<WebElement>ShoppingCartProductList;
 
     @FindBy(id="checkout_attribute_1")
@@ -44,6 +44,12 @@ public class CheckoutPage extends BasePage {
 
     @FindBy(xpath = "(//div[@class='selected-checkout-attributes'])[1]")
     WebElement selectedCheckoutAttributes;
+
+    @FindBy(xpath = "//tbody/tr/td[6]")
+    private List<WebElement>productPrices;
+
+    double subTotal = 0.0;
+    double Total = 0.0;
 
     public CheckoutPage(WebDriver driver) {
         super(driver);
@@ -98,13 +104,32 @@ public class CheckoutPage extends BasePage {
         return new Select(giftWrappingDropdown).getFirstSelectedOption().getText();
     }
 
-    public Double getGiftWrappingAmount(){
+    public double getGiftWrappingAmount(){
         String fullText = selectedCheckoutAttributes.getText();
         String GiftWrappingText = fullText.split("\n")[0];
         String amount = GiftWrappingText.replaceAll(".*\\[\\+\\$(.*?)\\].*", "$1");
-        Double giftWrappingAmount = Double.parseDouble(amount);
+        double giftWrappingAmount = Double.parseDouble(amount);
         return giftWrappingAmount;
 
+    }
+
+    public double getPackageAmount(){
+        String fullText = selectedCheckoutAttributes.getText();
+        String PackageText = fullText.split("\n")[1];
+        String amount = PackageText.replaceAll(".*\\[\\+\\$(.*?)\\].*", "$1");
+        double packageAmount = Double.parseDouble(amount);
+        return packageAmount;
+
+    }
+
+    public void getTotal(){
+        for(WebElement priceElement: productPrices){
+            String priceText = priceElement.getText().trim();
+            double priceValue = Double.parseDouble(priceText.replace("$", ""));
+            subTotal+=priceValue;
+        }
+        Total = subTotal + getGiftWrappingAmount() + getPackageAmount();
+        System.out.println(Total);
     }
 
 }

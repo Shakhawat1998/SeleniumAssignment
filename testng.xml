@@ -5,9 +5,9 @@
         <classes>
             <class name="tests.RegisterTests"/>
             <class name="tests.LoginTests"/>
-            <class name="tests.AddressTests"></class>
-            <class name="tests.ProductsTests"></class>
-            <class name="tests.CheckoutTests"></class>
+            <class name="tests.AddressTests"/>
+            <class name="tests.ProductsTests"/>
+            <class name="tests.CheckoutTests"/>
         </classes>
     </test>
 </suite>
