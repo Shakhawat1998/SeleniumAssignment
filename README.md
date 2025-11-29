@@ -77,7 +77,7 @@ The suite is designed using **Selenium WebDriver**, **TestNG**, and the **Page O
 
 ---
 
-## How To Run 
+# How To Run 
 
 ## ✅ Prerequisites
 
@@ -127,6 +127,9 @@ After execution, open the HTML report:
 reports/AutomationReport.html
 
 ---
+
+
+
 ## Video
 
 [▶ Watch the Demo Video](https://drive.google.com/file/d/1EmatZVyGHqZxkgcQpi54Rg_RFCk-1reh/view)
