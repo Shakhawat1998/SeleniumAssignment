@@ -128,6 +128,10 @@ reports/AutomationReport.html
 
 ---
 
+## Extent Report
+
+<img width="1919" height="912" alt="image" src="https://github.com/user-attachments/assets/4a14019e-b9ca-4a50-8f10-98d3e4743027" />
+
 
 
 ## Video
