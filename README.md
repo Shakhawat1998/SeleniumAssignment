@@ -77,6 +77,47 @@ The suite is designed using **Selenium WebDriver**, **TestNG**, and the **Page O
 
 ---
 
+## How To Run 
+
+## ✅ Prerequisites
+
+Install the following:
+
+- **Java JDK 8+**
+- **Maven 3.8+**
+- **Git**
+- **Google Chrome**
+- **IntelliJ IDEA / Eclipse (Optional)**
+
+Check installations:
+
+```bash
+java -version
+mvn -version
+📥 1. Clone the Repository
+
+git clone https://github.com/Shakhawat1998/SeleniumAssignment.git
+cd SeleniumAssignment
+📦 2. Install Dependencies
+
+mvn clean install
+▶️ 3. Run the Test Suite
+Run all tests:
+
+
+mvn clean test
+🎯 4. Run Specific Test Class
+Example:
+mvn -Dtest=RegisterTests test
+Multiple classes:
+mvn -Dtest=RegisterTests,LoginTests test
+📄 5. Run Using testng.xml
+mvn clean test -DsuiteXmlFile=testng.xml
+📊 Extent Report
+After execution, open the HTML report:
+reports/AutomationReport.html
+
+
 ## Video
 
 [▶ Watch the Demo Video](https://drive.google.com/file/d/1EmatZVyGHqZxkgcQpi54Rg_RFCk-1reh/view)
