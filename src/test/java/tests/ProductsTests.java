@@ -21,7 +21,7 @@ public class ProductsTests extends BaseTest{
         WaitUtils.setImplicitWait(driver, 10);
         Assert.assertTrue(productPage.isProductAddedToWishlistMessageDisplayed(),"product is not added to wishlist");
         productPage.closeMessage();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
 
     }
 
@@ -54,15 +54,15 @@ public class ProductsTests extends BaseTest{
         comparePage.clickJewelryCategoryLink();
         ScrollUtils scroll = new ScrollUtils(driver);
         scroll.scrollByPixels(500);
-        comparePage.addProduct1ToWishlist();
-        Thread.sleep(5000);
-        comparePage.addProduct2ToWishlist();
-        Thread.sleep(5000);
+        comparePage.addProduct1ToComparelist();
+        Thread.sleep(4000);
+        comparePage.addProduct2ToComparelist();
+        Thread.sleep(4000);
         WaitUtils.setImplicitWait(driver,10);
         scroll.scrollByPixels(500);
         comparePage.clickCompareProductListLink();
         scroll.scrollByPixels(500);
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         int productCount = comparePage.getThirdRowCellCount() - 1;
         Assert.assertTrue(productCount == 2 ,"Product count in compare list is not equal to 2");
 

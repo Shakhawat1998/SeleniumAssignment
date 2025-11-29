@@ -32,11 +32,11 @@ public class ComparePage extends BasePage {
         JewelryCategoryLink.click();
     }
 
-    public void addProduct1ToWishlist(){
+    public void addProduct1ToComparelist(){
         product1AddToWishlistButton.click();
     }
 
-    public void addProduct2ToWishlist(){
+    public void addProduct2ToComparelist(){
         product2AddToWishlistButton.click();
     }
 

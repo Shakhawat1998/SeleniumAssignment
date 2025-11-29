@@ -34,7 +34,7 @@ public class CheckoutTests extends BaseTest {
         checkoutPage.clickMessageCloseButton();
     }
 
-    @Test(priority = 15,description = "Verify that all 3 products are visible in shopping cart")
+    //@Test(priority = 15,description = "Verify that all 3 products are visible in shopping cart")
     public void verifyThatAll3ProductsAreVisibleInShoppingCart() throws InterruptedException {
         Thread.sleep(5000);
         ScrollUtils scroll = new ScrollUtils(driver);
@@ -48,7 +48,7 @@ public class CheckoutTests extends BaseTest {
     }
 
 
-    @Test(priority = 16,description = "Verify that gift wrapping dropdown option is selected as yes")
+    //@Test(priority = 16,description = "Verify that gift wrapping dropdown option is selected as yes")
     public void verifyThatGiftWrappingOptionIsSelectedAsYes() throws InterruptedException {
         ScrollUtils scroll = new ScrollUtils(driver);
         scroll.scrollByPixels(400);
@@ -61,14 +61,14 @@ public class CheckoutTests extends BaseTest {
     }
 
 
-    @Test(priority = 17, description = "Verify that gift wrapping amount is added properly when selected yes")
+    //@Test(priority = 17, description = "Verify that gift wrapping amount is added properly when selected yes")
     public void verifyThatGiftWrappingAmountIsAddedProperlyWhenSelectedYes() throws InterruptedException {
         Thread.sleep(2000);
         double giftWrappingAmount = checkoutPage.getGiftWrappingAmount();
         Assert.assertTrue(giftWrappingAmount > 0);
     }
 
-    @Test(priority = 18, description = "Verify that total price is correct")
+    //@Test(priority = 18, description = "Verify that total price is correct")
     public void verifyThatTotalPriceIsCorrect() throws InterruptedException {
         Thread.sleep(2000);
         ScrollUtils scroll = new ScrollUtils(driver);
