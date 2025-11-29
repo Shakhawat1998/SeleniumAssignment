@@ -94,31 +94,35 @@ Check installations:
 ```bash
 java -version
 mvn -version
-```
--📥 1. Clone the Repository
 
+-📥 1. Clone the Repository
+```bash
 git clone https://github.com/Shakhawat1998/SeleniumAssignment.git
 cd SeleniumAssignment
-📦 2. Install Dependencies
 
+-📦 2. Install Dependencies
+```bash
 mvn clean install
-▶️ 3. Run the Test Suite
+
+-▶️ 3. Run the Test Suite
 Run all tests:
-
-
+```bash
 mvn clean test
-🎯 4. Run Specific Test Class
+-🎯 4. Run Specific Test Class
 Example:
+```bash
 mvn -Dtest=RegisterTests test
 Multiple classes:
+```bash
 mvn -Dtest=RegisterTests,LoginTests test
-📄 5. Run Using testng.xml
+-📄 5. Run Using testng.xml
+```bash
 mvn clean test -DsuiteXmlFile=testng.xml
-📊 Extent Report
+-📊 Extent Report
 After execution, open the HTML report:
 reports/AutomationReport.html
 
-
+---
 ## Video
 
 [▶ Watch the Demo Video](https://drive.google.com/file/d/1EmatZVyGHqZxkgcQpi54Rg_RFCk-1reh/view)
