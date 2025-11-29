@@ -94,7 +94,8 @@ Check installations:
 ```bash
 java -version
 mvn -version
-📥 1. Clone the Repository
+```
+-📥 1. Clone the Repository
 
 git clone https://github.com/Shakhawat1998/SeleniumAssignment.git
 cd SeleniumAssignment
